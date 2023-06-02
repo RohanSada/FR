@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Face Recognition</title>
+    <style>
+        .button-container {
+            position: absolute;
+            top: 650px;
+            left: 170px;
+        }
+
+        .button-container form {
+            display: inline-block;
+        }
+
+        .button-container button {
+            width: 200px; /* Adjust the width as desired */
+            height: 50px; /* Adjust the height as desired */
+            font-size: 30px; /* Optional: Adjust the font size as desired */
+        }
+        h2 {
+            position: absolute;
+            top: 550px;
+            left: 170px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Captured Image</h1>
+    <h2>Name of the person: {{saved_text}}</h2>
+    <img src="{{ url_for('Confirm.Show_Capture') }}" alt="Captured Image" width="640" height="480">
+    <div class="button-container">
+        <form action="/Confirm/Confirm_Capture" method="POST">
+            <button type="submit">Confirm</button>
+        </form>
+        <form action="/Confirm/Retake_Capture" method="POST">
+            <button type="submit">Retake</button>
+        </form>
+        <form action="/Confirm/Quit" method="POST">
+            <button type="submit">Quit</button>
+        </form>
+    </div>
+</body>
+</html>

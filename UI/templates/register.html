@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Face Recognition</title>
+    <style>
+        .button-container {
+            position: absolute;
+            top: 650px;
+            left: 170px;
+        }
+
+        .button-container form {
+            display: inline-block;
+        }
+
+        .button-container button {
+            width: 250px; /* Adjust the width as desired */
+            height: 50px; /* Adjust the height as desired */
+            font-size: 30px; /* Optional: Adjust the font size as desired */
+        }
+        .fixed-position {
+            position: fixed;
+            left: 1000px; /* Set the desired left position in pixels */
+            top: 350px; /* Set the desired top position in pixels */
+        }
+        h2 {
+            position: absolute;
+            top: 300px;
+            left: 1000px;
+        }
+    </style>
+</head>
+<body>
+    <h1><b>Face Registration</b></h1>
+    <h1>Video Feed</h1>
+    {% if name %}
+        <h2>{{ name }}!</h2>
+    {% endif %}
+    <img src="{{ url_for('Register.Display_Video_Feed') }}" alt="Video Feed" width="640" height="480">
+    <div class="button-container">
+        <form action="/Register/Back" method="POST">
+            <button type="submit">Back</button>
+        </form>
+        <form action="/Register/RegisterFace" method="POST">
+            <button type="submit">Register Face</button>
+        </form>
+        <div class="fixed-position">
+            <form method="POST" action="/Register/Enter_Name">
+                <input type="text" name="text" placeholder="Enter Name here">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        </form>
+        <form action="/Register/Quit" method="POST">
+            <button type="submit">Quit</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Face Recognition</title>
+    <style>
+        body {
+            position: absolute;
+            top: 150px;
+            left: 500px;
+        }
+
+        .button-container {
+            position: absolute;
+            top: 200px;
+            left: 170px;
+        }
+
+        .button-container form {
+            display: inline-block;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 75px; /* Adjust the font size as desired */
+        }
+
+        .button-container button {
+            width: 200px; /* Adjust the width as desired */
+            height: 50px; /* Adjust the height as desired */
+            font-size: 30px; /* Optional: Adjust the font size as desired */
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;"><b>Face Recognition</b></h1>
+    <div class="button-container">
+        <form action="/Start" method="POST">
+            <button type="submit">Start</button>
+        </form>
+        <form action="/Register" method="POST">
+            <button type="submit">Register</button>
+        </form>
+        <form action="/Quit" method="POST">
+            <button type="submit">Quit</button>
+        </form>
+    </div>
+</body>
+</html>
